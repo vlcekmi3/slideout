@@ -209,6 +209,7 @@ Slideout.prototype._initTouchEvents = function() {
    */
   this._onTouchEndFn = function() {
     if (self._moved) {
+      self.emit('translateend');
       (self._opening && Math.abs(self._currentOffsetX) > self._tolerance) ? self.open() : self.close();
     }
     self._moved = false;
